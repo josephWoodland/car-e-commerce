@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% load humanize %}
 {% load static %}
 <!-- Banner start -->
 <div class="banner" id="banner">
@@ -132,7 +133,7 @@
                             <a href="car-details.html" class="car-img">
                                 <div class="tag-2">Featured</div>
                                 <div class="price-box">
-                                    <span>${{ car.price }}</span>
+                                    <span>${{ car.price | intcomma }}</span>
                                 </div>
                                 <img class="d-block w-100" src="{{ car.car_photo.url }}" alt="car" style="min-height: 262px; max-height: 262px;">
                             </a>
