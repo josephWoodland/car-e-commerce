@@ -8,10 +8,12 @@ def home(request):
 
     teams = Team.objects.all()
     feature_cars = Car.objects.order_by('-created_date').filter(is_featured=True)
+    all_cars = Car.objects.order_by('-created_date')
     
     context = {
         'teams': teams,
         'featured_cars': feature_cars,
+        'all_cars': all_cars,
     }
 
     template = 'pages/home.html'
