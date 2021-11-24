@@ -3,6 +3,7 @@
 {% block content %}
 
 {% load humanize %}
+
 {% load static %}
 <!-- Banner start -->
 <div class="banner" id="banner">
@@ -96,7 +97,7 @@
                         <i class="fa fa-search"></i> Search
                     </button>
                 </div>
-            </form>
+            </form>≈
         </div>
         <!-- Search box 3 end -->
         <a class="carousel-control-prev none-580" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -130,7 +131,7 @@
                 <div class="slick-slide-item">
                     <div class="car-box-3">
                         <div class="car-thumbnail">
-                            <a href="car-details.html" class="car-img">
+                            <a href="{% url 'car_detail' car.id %}" class="car-img">
                                 <div class="tag-2">Featured</div>
                                 <div class="price-box">
                                     <span>${{ car.price | intcomma }}</span>
@@ -141,7 +142,6 @@
                                 <div class="overlap-box">
                                     <div class="overlap-btns-area">
                                         <div class="car-magnify-gallery">
-
                                             <a href="{{ car.car_photo.url }}" class="overlap-btn">
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" src="{{ car.car_photo.url }}">
@@ -173,10 +173,10 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="car-details.html">{{ car.car_title }}</a>
+                                <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
                             </h1>
                             <div class="location">
-                                <a href="car-details.html">
+                                <a href="{% url 'car_detail' car.id %}">
                                     <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state}}
                                 </a>
                             </div>
@@ -271,10 +271,10 @@
                     </div>
                     <div class="detail">
                         <h1 class="title">
-                            <a href="car-details.html">{{ car.car_title }}</a>
+                            <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
                         </h1>
                         <div class="location">
-                            <a href="car-details.html">
+                            <a href="{% url 'car_detail' car.id %}">
                                 <i class="flaticon-pin"></i>{{ car.city }}, {{ car.state}}
                             </a>
                         </div>
@@ -375,7 +375,7 @@
                                         <span class="del-2">$1050.00</span>
                                     </div>
                                     <div class="">
-                                        <a href="car-details.html" class="btn btn-md btn-round btn-theme">Convertible</a>
+                                        <a href="" class="btn btn-md btn-round btn-theme">Convertible</a>
                                     </div>
                                 </div>
                             </div>
@@ -413,7 +413,7 @@
                                 <div class="description">
                                     <h3>Description</h3>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                                    <a href="car-details.html" class="btn btn-md btn-round btn-theme">Show Detail</a>
+                                    <a href="" class="btn btn-md btn-round btn-theme">Show Detail</a>
                                 </div>
                             </div>
                         </div>
