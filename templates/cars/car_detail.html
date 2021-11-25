@@ -74,26 +74,34 @@
                                         <img src="{{ car.car_photo.url }}" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
+                                {% if car.car_photo_1 %}
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-1" data-slide-to="1" data-target="#carDetailsSlider">
                                         <img src="{{ car.car_photo_1.url }}" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
+                                {% endif %}
+                                {% if car.car_photo_2 %}
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-2" data-slide-to="2" data-target="#carDetailsSlider">
                                         <img src="{{ car.car_photo_2.url }}" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
+                                {% endif %}
+                                {% if car.car_photo_3 %}
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-3" data-slide-to="3" data-target="#carDetailsSlider">
                                         <img src="{{ car.car_photo_3.url }}" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
+                                {% endif %}
+                                {% if car.car_photo_4 %}
                                 <li class="list-inline-item">
                                     <a id="carousel-selector-4" data-slide-to="4" data-target="#carDetailsSlider">
                                         <img src="{{ car.car_photo_4.url }}" class="img-fluid" alt="small-car">
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
