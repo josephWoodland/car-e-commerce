@@ -33,4 +33,10 @@ def search(request):
 
     template = 'cars/search.html'
 
-    return render(request, template)
+    cars = Car.objects.order_by('-created_date')
+
+    context = {
+        'cars' : cars,
+    }
+
+    return render( request, template, context )
