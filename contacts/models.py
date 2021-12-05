@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 # Create your models here.
 
-class contact(models.Model):
+class Contact(models.Model):
     first_name = models.CharField(max_length=100),
     last_name = models.CharField(max_length=100),
     car_id = models.IntegerField(),
@@ -14,3 +14,6 @@ class contact(models.Model):
     message = models.TextField(blank=True, max_length=250),
     user_id = models.IntegerField(blank=True),
     created_date = models.DateTimeField(blank=True, default=datetime.now),
+
+    def __str__(sefl):
+        return self.email
