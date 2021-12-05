@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # 'pages.apps.PagesConfig',
+
+    # Django packages
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,10 +40,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.humanize',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+    # Apps 
     'pages',
     'cars',
     'accounts',
+    'contacts',
+
+    # packages
     'ckeditor',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # Allauth providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+
 
 ]
 
@@ -135,7 +150,6 @@ STATICFILES_DIRS = [
 ]
 
 # Media setttings
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
@@ -143,3 +157,6 @@ MEDIA_URL = '/media/'
 MESSAGES_TAGS = {
     messages.ERROR: 'danger',
 }
+
+# Allauth id 
+SITE_ID = 1
