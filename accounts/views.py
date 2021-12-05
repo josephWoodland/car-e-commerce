@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def login(request):
-    
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -65,7 +65,10 @@ def register(request):
 
 
 def logout(request):
-    return redirect('home')
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You have been logged out.')
+        return redirect('home')
 
 
 def dashboard(request):
